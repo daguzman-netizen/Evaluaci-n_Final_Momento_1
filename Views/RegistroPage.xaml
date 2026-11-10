@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Evaluación_Final_Momento_1.Views.RegistroPage"
+    Title="Registro">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="15">
+
+            <!-- Usuario conectado -->
+            <Label
+                x:Name="lblUsuario"
+                Text="Usuario conectado:"
+                FontSize="14"
+                TextColor="#2457A6"
+                FontAttributes="Bold"/>
+
+            <Label
+                Text="REGISTRO DE ESTUDIANTES"
+                Style="{StaticResource TitleStyle}"/>
+
+            <Label
+                Text="Datos de inscripción"
+                FontAttributes="Bold"
+                FontSize="17"
+                TextColor="#2457A6"/>
+
+            <!-- GRID: 5 FILAS Y 2 COLUMNAS -->
+            <Grid
+                RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                ColumnDefinitions="*,*"
+                RowSpacing="12"
+                ColumnSpacing="12">
+
+                <Label
+                    Text="Fecha:"
+                    VerticalOptions="Center"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+
+                <DatePicker
+                    x:Name="dpFecha"
+                    Format="dd/MM/yyyy"
+                    Grid.Row="0"
+                    Grid.Column="1"/>
+
+                <Label
+                    Text="País:"
+                    VerticalOptions="Center"
+                    Grid.Row="1"
+                    Grid.Column="0"/>
+
+                <Picker
+                    x:Name="pkPais"
+                    Title="Seleccione país"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    SelectedIndexChanged="PkPais_SelectedIndexChanged"/>
+
+                <Label
+                    Text="Ciudad:"
+                    VerticalOptions="Center"
+                    Grid.Row="2"
+                    Grid.Column="0"/>
+
+                <Picker
+                    x:Name="pkCiudad"
+                    Title="Seleccione ciudad"
+                    Grid.Row="2"
+                    Grid.Column="1"/>
+
+                <Label
+                    Text="Monto inicial:"
+                    VerticalOptions="Center"
+                    Grid.Row="3"
+                    Grid.Column="0"/>
+
+                <Entry
+                    x:Name="txtMontoInicial"
+                    Placeholder="Ingrese monto"
+                    Keyboard="Numeric"
+                    Style="{StaticResource InputStyle}"
+                    TextChanged="TxtMontoInicial_TextChanged"
+                    Grid.Row="3"
+                    Grid.Column="1"/>
+
+                <Label
+                    Text="Pago mensual:"
+                    VerticalOptions="Center"
+                    Grid.Row="4"
+                    Grid.Column="0"/>
+
+                <Entry
+                    x:Name="txtPagoMensual"
+                    IsReadOnly="True"
+                    BackgroundColor="#EAF1FC"
+                    Style="{StaticResource InputStyle}"
+                    Grid.Row="4"
+                    Grid.Column="1"/>
+
+            </Grid>
+
+            <Label
+                Text="Datos personales"
+                FontAttributes="Bold"
+                FontSize="17"
+                TextColor="#2457A6"/>
+
+            <!-- GRID: 2 FILAS Y 3 COLUMNAS -->
+            <Grid
+                RowDefinitions="Auto,Auto"
+                ColumnDefinitions="*,*,*"
+                ColumnSpacing="8"
+                RowSpacing="8">
+
+                <Label
+                    Text="Nombre"
+                    HorizontalOptions="Center"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+
+                <Label
+                    Text="Apellido"
+                    HorizontalOptions="Center"
+                    Grid.Row="0"
+                    Grid.Column="1"/>
+
+                <Label
+                    Text="Edad"
+                    HorizontalOptions="Center"
+                    Grid.Row="0"
+                    Grid.Column="2"/>
+
+                <Entry
+                    x:Name="txtNombre"
+                    Placeholder="Nombre"
+                    Style="{StaticResource InputStyle}"
+                    Grid.Row="1"
+                    Grid.Column="0"/>
+
+                <Entry
+                    x:Name="txtApellido"
+                    Placeholder="Apellido"
+                    Style="{StaticResource InputStyle}"
+                    Grid.Row="1"
+                    Grid.Column="1"/>
+
+                <Entry
+                    x:Name="txtEdad"
+                    Placeholder="Edad"
+                    Keyboard="Numeric"
+                    Style="{StaticResource InputStyle}"
+                    Grid.Row="1"
+                    Grid.Column="2"/>
+
+            </Grid>
+
+            <Button
+                Text="VER RESUMEN"
+                Style="{StaticResource PrimaryButtonStyle}"
+                Clicked="BtnVerResumen_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
